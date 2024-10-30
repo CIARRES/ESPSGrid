@@ -1,0 +1,77 @@
+TYPE
+  LOGLEVEL : (CRITICAL, WARNING, INFO, DEBUG) := INFO;
+END_TYPE
+
+FUNCTION_BLOCK LOGGER
+  VAR_INPUT
+    TRIG : BOOL;
+    MSG : STRING;
+    LEVEL : LOGLEVEL := INFO;
+  END_VAR
+  VAR
+    TRIG0 : BOOL;
+  END_VAR
+
+  IF TRIG AND NOT TRIG0 THEN
+  {{
+   LogMessage(GetFbVar(LEVEL),(char*)GetFbVar(MSG, .body),GetFbVar(MSG, .len));
+  }}
+  END_IF;
+  TRIG0:=TRIG;
+END_FUNCTION_BLOCK
+
+
+PROGRAM metering
+  VAR
+    SM01VA : INT;
+    SM01VB : INT;
+    SM01VC : INT;
+    SM01IA : INT;
+    SM01IB : INT;
+    SM01IC : INT;
+    SM02VA : INT;
+    SM02VB : INT;
+    SM02VC : INT;
+    SM02IA : INT;
+    SM02IB : INT;
+    SM02IC : INT;
+    SM03VA : INT;
+    SM03VB : INT;
+    SM03VC : INT;
+    SM03IA : INT;
+    SM03IB : INT;
+    SM03IC : INT;
+    SM04VA : INT;
+    SM04VB : INT;
+    SM04VC : INT;
+    SM04IA : INT;
+    SM04IB : INT;
+    SM04IC : INT;
+    SM01SecST : BOOL;
+    SM02SecST : BOOL;
+    SM03SecST : BOOL;
+    SM04SecST : BOOL;
+    CB01CST : BOOL;
+    CB02CST : BOOL;
+    CB03CST : BOOL;
+    CB04CST : BOOL;
+    CB01OpST : BOOL;
+    CB02OpST : BOOL;
+    CB03OpST : BOOL;
+    CB04OpST : BOOL;
+  END_VAR
+  VAR
+    Close : BOOL;
+  END_VAR
+
+  Close := NOT(CB01OpST);
+END_PROGRAM
+
+
+CONFIGURATION Config0
+
+  RESOURCE Res0 ON PLC
+    TASK task0(INTERVAL := T#20ms,PRIORITY := 0);
+    PROGRAM instance0 WITH task0 : metering;
+  END_RESOURCE
+END_CONFIGURATION

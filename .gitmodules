@@ -1,0 +1,7 @@
+[submodule "Scada/ScadaBR-Container"]
+	path = Scada/ScadaBR-Container
+	url = https://github.com/CIARRES/ScadaBR-Container
+
+[submodule "RTU/OpenPLC_v3_iec61850"]
+	path = RTU/OpenPLC_v3_iec61850
+	url = https://github.com/CIARRES/OpenPLC_v3_iec61850.git
