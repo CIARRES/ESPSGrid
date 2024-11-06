@@ -5,3 +5,9 @@
 [submodule "RTU/OpenPLC_v3_iec61850"]
 	path = RTU/OpenPLC_v3_iec61850
 	url = https://github.com/CIARRES/OpenPLC_v3_iec61850.git
+[submodule "IEDs/Emulator-images/libs/libsimlink"]
+	path = IEDs/Emulator-images/libs/libsimlink
+	url = https://github.com/CIARRES/libsimlink.git
+[submodule "IEDs/Emulator-images/libs/libiec61850"]
+	path = IEDs/Emulator-images/libs/libiec61850
+	url = https://github.com/mz-automation/libiec61850.git
