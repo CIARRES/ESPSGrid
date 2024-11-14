@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0201" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ns1="http://www.plcopen.org/xml/tc6_0201">
   <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2024-04-18T11:01:11"/>
-  <contentHeader name="Unnamed" modificationDateTime="2024-10-30T15:33:21">
+  <contentHeader name="Unnamed" modificationDateTime="2024-11-14T02:50:51">
     <coordinateInfo>
       <fbd>
         <scaling x="10" y="10"/>
@@ -20,142 +20,142 @@
       <pou name="metering" pouType="program">
         <interface>
           <localVars>
-            <variable name="SM01VA" address="%IW10">
+            <variable name="PM01VA" address="%IW10">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM01VB" address="%IW11">
+            <variable name="PM01VB" address="%IW11">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM01VC" address="%IW12">
+            <variable name="PM01VC" address="%IW12">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM01IA" address="%IW13">
+            <variable name="PM01IA" address="%IW13">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM01IB" address="%IW14">
+            <variable name="PM01IB" address="%IW14">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM01IC" address="%IW15">
+            <variable name="PM01IC" address="%IW15">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM02VA" address="%IW20">
+            <variable name="PM02VA" address="%IW20">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM02VB" address="%IW21">
+            <variable name="PM02VB" address="%IW21">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM02VC" address="%IW22">
+            <variable name="PM02VC" address="%IW22">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM02IA" address="%IW23">
+            <variable name="PM02IA" address="%IW23">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM02IB" address="%IW24">
+            <variable name="PM02IB" address="%IW24">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM02IC" address="%IW25">
+            <variable name="PM02IC" address="%IW25">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM03VA" address="%IW30">
+            <variable name="PM03VA" address="%IW30">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM03VB" address="%IW31">
+            <variable name="PM03VB" address="%IW31">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM03VC" address="%IW32">
+            <variable name="PM03VC" address="%IW32">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM03IA" address="%IW33">
+            <variable name="PM03IA" address="%IW33">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM03IB" address="%IW34">
+            <variable name="PM03IB" address="%IW34">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM03IC" address="%IW35">
+            <variable name="PM03IC" address="%IW35">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM04VA" address="%IW40">
+            <variable name="PM04VA" address="%IW40">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM04VB" address="%IW41">
+            <variable name="PM04VB" address="%IW41">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM04VC" address="%IW42">
+            <variable name="PM04VC" address="%IW42">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM04IA" address="%IW43">
+            <variable name="PM04IA" address="%IW43">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM04IB" address="%IW44">
+            <variable name="PM04IB" address="%IW44">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM04IC" address="%IW45">
+            <variable name="PM04IC" address="%IW45">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="SM01SecST" address="%IX0.1">
+            <variable name="PM01SecST" address="%IX0.1">
               <type>
                 <BOOL/>
               </type>
             </variable>
-            <variable name="SM02SecST" address="%IX0.2">
+            <variable name="PM02SecST" address="%IX0.2">
               <type>
                 <BOOL/>
               </type>
             </variable>
-            <variable name="SM03SecST" address="%IX0.3">
+            <variable name="PM03SecST" address="%IX0.3">
               <type>
                 <BOOL/>
               </type>
             </variable>
-            <variable name="SM04SecST" address="%IX0.4">
+            <variable name="PM04SecST" address="%IX0.4">
               <type>
                 <BOOL/>
               </type>
