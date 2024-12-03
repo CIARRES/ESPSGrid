@@ -25,9 +25,14 @@ if [ -z "$S_PORT" ]; then
     exit 1
 fi
 
+if [ -z "$AUTO_MODE" ]; then
+    echo "Error: AUTO_MOD environment variable is not set."
+    exit 1
+fi
+
 echo "Generating model for CB $CB_ID..."
 ./modelGenerator $CB_ID $CB_IP $CB_GATEWAY && \
 make model &>/dev/null && \
 echo "Compiling CB $CB_ID..." && \
 make &>/dev/null && \
-./circuitBreaker $CB_ID $S_IP $S_PORT
+./circuitBreaker $CB_ID $S_IP $S_PORT $AUTO_MODE

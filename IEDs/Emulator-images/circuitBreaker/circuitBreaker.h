@@ -22,7 +22,7 @@ public:
      * @param goose_interface The circuit breaker GOOSE interface.
      * @return CircuitBreaker The circuit breaker object.
      */
-    CircuitBreaker(int16_t id, char* ip, int16_t dataPort, char* goose_interface);
+    CircuitBreaker(int16_t id, char* ip, int16_t dataPort, char* goose_interface, bool automaticOperationMode);
 
     /**
      * @brief Destroy the Smart Meter object
@@ -66,6 +66,7 @@ private:
     char* ip;                    /** IP address of the circuit breaker. */
     char* gooseInterface;       /** Network interface for GOOSE communication. */
     int16_t dataPort;            /** Port number for data communication. */
+    bool automaticOperationMode; /** Automatic operation mode flag. */
 
     /**
      * @brief Create a Simulink model for the circuit breaker.

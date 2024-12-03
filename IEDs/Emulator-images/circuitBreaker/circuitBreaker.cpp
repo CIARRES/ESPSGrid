@@ -36,7 +36,7 @@ void
  *                                             *
  ***********************************************/
 
-CircuitBreaker::CircuitBreaker(int16_t id, char* ip, int16_t dataPort, char* goose_interface)
+CircuitBreaker::CircuitBreaker(int16_t id, char* ip, int16_t dataPort, char* goose_interface, bool automaticOperationMode)
 {
     this->id = id;
 
@@ -59,6 +59,7 @@ CircuitBreaker::CircuitBreaker(int16_t id, char* ip, int16_t dataPort, char* goo
     model->data.safeState = true;
     model->data.operatorState = false;
     model->data.currentState = NULL;
+    model->data.automaticOperationMode = automaticOperationMode;
 
     this->server = new IEC61850Server(MMS_PORT, this->gooseInterface, model);
 }
@@ -101,7 +102,7 @@ CircuitBreaker::createSimlinkModel()
 
     // Create data buffers
     simModel->stationsData = (StationData *)malloc(simModel->numStations * sizeof(StationData));
-    simModel->stationsData->digitalOut[0] = false;
+    simModel->stationsData->digitalOut[0] = automaticOperationMode;
 
     // Link data buffers
     model->data.currentState = (bool*)simModel->stationsData->digitalOut;
@@ -181,8 +182,8 @@ int main(int argc, char* argv[]) {
 
     /* Create model and parse parameters */
 
-    if (argc < 4 || argc > 5) {
-        std::cerr << "Usage: " << argv[0] << " <CB_ID> <Simulink_IP> <DataPort> [<GOOSE_interface>]" << std::endl;
+    if (argc < 5 || argc > 6) {
+        std::cerr << "Usage: " << argv[0] << " <CB_ID> <Simulink_IP> <DataPort> <automatic_mode> [<GOOSE_interface>]" << std::endl;
         return 1;
     }
 
@@ -193,13 +194,15 @@ int main(int argc, char* argv[]) {
 
     char* goose_interface = NULL;
 
-    if (argc == 5)
-        goose_interface = argv[4];
+    bool automaticOperationMode = (bool)atoi(argv[4]);
+
+    if (argc == 6)
+        goose_interface = argv[5];
 
     /* Create Circuit Breaker */
 
     printf("Creating Circuit Breaker...\n\n");
-    circuitBreaker = new CircuitBreaker(id, ip, dataPort, goose_interface);
+    circuitBreaker = new CircuitBreaker(id, ip, dataPort, goose_interface, automaticOperationMode);
 
     /* SetUp Circuit Breaker */
 
@@ -208,8 +211,6 @@ int main(int argc, char* argv[]) {
 
     printf("Running Circuit Breaker...\n\n");
     circuitBreaker->run();
-
-    //circuitBreaker->destroy();
 
     return 0;
 }

@@ -35,6 +35,7 @@ services:
       - CB_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_PORT=20001
+      - AUTO_MODE=1
     networks:
       transportNetwork:
         ipv4_address: 10.0.1.2
@@ -60,6 +61,7 @@ services:
       - CB_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_PORT=20002
+      - AUTO_MODE=1
     networks:
       transportNetwork:
         ipv4_address: 10.0.2.2
@@ -85,6 +87,7 @@ services:
       - CB_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_PORT=20003
+      - AUTO_MODE=1
     networks:
       transportNetwork:
         ipv4_address: 10.0.3.2
@@ -110,6 +113,7 @@ services:
       - CB_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_PORT=20004
+      - AUTO_MODE=1
     networks:
       transportNetwork:
         ipv4_address: 10.0.4.2

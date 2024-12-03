@@ -22,6 +22,7 @@ struct cbData {
     bool safeState;              /**< Indicates if the power line is in a safe state. */
     bool operatorState;          /**< Indicates the state of the operator. */
     bool* currentState;          /**< Indicates the current state of the circuit breaker. */
+    bool automaticOperationMode; /**< Indicates the automatic operation mode. */
     pthread_mutex_t* dataLock;   /**< Mutex for protecting access to the data. */
 } typedef CircuitBreakerData;
 
@@ -72,6 +73,9 @@ public:
      */
     void setOperatorState(bool state)
     {
+        if (data.automaticOperationMode)
+            return;
+
         pthread_mutex_lock(data.dataLock);
         data.operatorState = state;
         updateCicuitBreakerDataStatus();
@@ -86,6 +90,9 @@ private:
      */
     void updateCicuitBreakerDataStatus()
     {
-        *data.currentState = data.safeState && data.operatorState;
+        if (data.automaticOperationMode)
+            *data.currentState = data.safeState;
+        else
+            *data.currentState = data.safeState && data.operatorState;
     }
 };
