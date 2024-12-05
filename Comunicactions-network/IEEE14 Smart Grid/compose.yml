@@ -22,7 +22,7 @@ services:
       - PM_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_DATA_PORT=10001
-      - SAFE_THRESHOLD=500
+      - SAFE_THRESHOLD=10000
     networks:
       transportNetwork:
         ipv4_address: 10.0.1.1
@@ -48,7 +48,7 @@ services:
       - PM_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_DATA_PORT=10002
-      - SAFE_THRESHOLD=500
+      - SAFE_THRESHOLD=10000
     networks:
       transportNetwork:
         ipv4_address: 10.0.2.1
@@ -74,7 +74,7 @@ services:
       - PM_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_DATA_PORT=10003
-      - SAFE_THRESHOLD=500
+      - SAFE_THRESHOLD=10000
     networks:
       transportNetwork:
         ipv4_address: 10.0.3.1
@@ -100,7 +100,7 @@ services:
       - PM_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_DATA_PORT=10004
-      - SAFE_THRESHOLD=500
+      - SAFE_THRESHOLD=10000
     networks:
       transportNetwork:
         ipv4_address: 10.0.4.1
