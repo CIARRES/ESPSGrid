@@ -206,6 +206,7 @@ IEC61850Server::IEC61850Server(int port, char* gooseInterface, CircuitBreakerMod
     printf("Starting IEC61850SERVER\n");
 
     this->model = model;
+    this->port = port;
 
     /* Create new server configuration object */
     IedServerConfig config = IedServerConfig_create();

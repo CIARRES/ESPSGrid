@@ -66,7 +66,6 @@ private:
     char* ip;                    /** IP address of the circuit breaker. */
     char* gooseInterface;       /** Network interface for GOOSE communication. */
     int16_t dataPort;            /** Port number for data communication. */
-    bool automaticOperationMode; /** Automatic operation mode flag. */
 
     /**
      * @brief Create a Simulink model for the circuit breaker.

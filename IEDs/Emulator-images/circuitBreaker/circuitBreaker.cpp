@@ -75,7 +75,7 @@ CircuitBreaker::displayData()
         pthread_mutex_lock(model->data.dataLock);
         bool safeState = model->data.safeState;
         bool operatorState = model->data.operatorState;
-        bool breakerState = model->data.currentState;
+        bool breakerState = *model->data.currentState;
         pthread_mutex_unlock(model->data.dataLock);
 
         printf("%s:\n", cbName);
@@ -102,7 +102,7 @@ CircuitBreaker::createSimlinkModel()
 
     // Create data buffers
     simModel->stationsData = (StationData *)malloc(simModel->numStations * sizeof(StationData));
-    simModel->stationsData->digitalOut[0] = automaticOperationMode;
+    simModel->stationsData->digitalOut[0] = model->data.automaticOperationMode && model->data.safeState;
 
     // Link data buffers
     model->data.currentState = (bool*)simModel->stationsData->digitalOut;
