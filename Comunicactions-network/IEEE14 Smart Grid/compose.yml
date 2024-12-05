@@ -2,12 +2,14 @@ services:
 
   rtu:
     image: javiersande/sg-rtu:latest
+    tty: true
     networks:
       transportNetwork:
         ipv4_address: 10.0.0.3
 
   scada:
     image: javiersande/sg-scada:latest
+    tty: true
     networks:
       transportNetwork:
         ipv4_address: 10.0.0.4
@@ -20,7 +22,7 @@ services:
       - PM_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_DATA_PORT=10001
-      - SAFE_THRESHOLD=500
+      - SAFE_THRESHOLD=10000
     networks:
       transportNetwork:
         ipv4_address: 10.0.1.1
@@ -32,7 +34,8 @@ services:
       - CB_IP=10.0.1.2
       - CB_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
-      - S_PORT=30001
+      - S_PORT=20001
+      - AUTO_MODE=1
     networks:
       transportNetwork:
         ipv4_address: 10.0.1.2
@@ -45,7 +48,7 @@ services:
       - PM_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_DATA_PORT=10002
-      - SAFE_THRESHOLD=500
+      - SAFE_THRESHOLD=10000
     networks:
       transportNetwork:
         ipv4_address: 10.0.2.1
@@ -57,7 +60,8 @@ services:
       - CB_IP=10.0.2.2
       - CB_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
-      - S_PORT=30002
+      - S_PORT=20002
+      - AUTO_MODE=1
     networks:
       transportNetwork:
         ipv4_address: 10.0.2.2
@@ -70,7 +74,7 @@ services:
       - PM_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_DATA_PORT=10003
-      - SAFE_THRESHOLD=500
+      - SAFE_THRESHOLD=10000
     networks:
       transportNetwork:
         ipv4_address: 10.0.3.1
@@ -82,7 +86,8 @@ services:
       - CB_IP=10.0.3.2
       - CB_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
-      - S_PORT=30003
+      - S_PORT=20003
+      - AUTO_MODE=1
     networks:
       transportNetwork:
         ipv4_address: 10.0.3.2
@@ -95,7 +100,7 @@ services:
       - PM_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
       - S_DATA_PORT=10004
-      - SAFE_THRESHOLD=500
+      - SAFE_THRESHOLD=10000
     networks:
       transportNetwork:
         ipv4_address: 10.0.4.1
@@ -107,7 +112,8 @@ services:
       - CB_IP=10.0.4.2
       - CB_GATEWAY=10.0.0.1
       - S_IP=10.0.0.2
-      - S_PORT=30004
+      - S_PORT=20004
+      - AUTO_MODE=1
     networks:
       transportNetwork:
         ipv4_address: 10.0.4.2
