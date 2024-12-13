@@ -80,11 +80,12 @@ This section provides a step-by-step guide to install and launch the default exa
 
 1. **Clone the Repository**
 
-   Begin by cloning the repository and navigating to the installation folder:
+   Begin by cloning the repository and its submodules:
 
    ```bash
    git clone https://github.com/CIARRES/SG-Co-Simulation-Framework.git
    cd SG-Co-Simulation-Framework
+   git submodule update --init
    ```
 
 2. **Build the IEDs Images**
