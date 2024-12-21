@@ -319,10 +319,6 @@ IEC61850Server::updateServer() {
         IedServer_updateBooleanAttributeValue(iedServer, IEDMODEL_LogicalDevice_GGIO1_CircuitBreaker_stVal, *model->data.currentState);
         IedServer_updateQuality(iedServer, IEDMODEL_LogicalDevice_GGIO1_CircuitBreaker_q, QUALITY_VALIDITY_GOOD | QUALITY_SOURCE_SUBSTITUTED);
 
-        IedServer_updateUTCTimeAttributeValue(iedServer, IEDMODEL_LogicalDevice_GGIO1_Security_t, timestamp);
-        IedServer_updateBooleanAttributeValue(iedServer, IEDMODEL_LogicalDevice_GGIO1_Security_stVal, model->data.safeState);
-        IedServer_updateQuality(iedServer, IEDMODEL_LogicalDevice_GGIO1_Security_q, QUALITY_VALIDITY_GOOD | QUALITY_SOURCE_SUBSTITUTED);
-
         IedServer_updateUTCTimeAttributeValue(iedServer, IEDMODEL_LogicalDevice_GGIO1_Operator_t, timestamp);
         IedServer_updateBooleanAttributeValue(iedServer, IEDMODEL_LogicalDevice_GGIO1_Operator_stVal, model->data.operatorState);
         IedServer_updateQuality(iedServer, IEDMODEL_LogicalDevice_GGIO1_Operator_q, QUALITY_VALIDITY_GOOD | QUALITY_SOURCE_SUBSTITUTED);

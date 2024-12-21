@@ -42,7 +42,6 @@
           <LN0 desc="" lnType="LLN01" lnClass="LLN0" inst="">
             <DataSet name="CB"  desc="CBMI">
               <FCDA ldInst="LogicalDevice" prefix="" lnClass="GGIO" lnInst="1" doName="CircuitBreaker" fc="ST" daName="stVal" />
-              <FCDA ldInst="LogicalDevice" prefix="" lnClass="GGIO" lnInst="1" doName="Security" fc="ST" daName="stVal" />
             </DataSet>
 
             <ReportControl name="CB" indexed="true" confRev="1" datSet="CB" rptID="CB" buffered="false" intgPd="1000" bufTime="50">
@@ -67,12 +66,6 @@
               </DAI>
             </DOI>
             <DOI name="CircuitBreaker"/>
-
-            <DOI name="Security">
-              <DAI name="ctlModel">
-                <Val>direct-with-normal-security</Val>
-              </DAI>
-            </DOI>
 
             <DOI name="Operator">
               <DAI name="ctlModel">
@@ -100,7 +93,6 @@
       <DO name="Health" type="INS_4" />
       <DO name="NamPlt" type="LPL_1" />
       <DO name="CircuitBreaker" type="SPC_ST" />
-      <DO name="Security" type="SPC_SEC" />
       <DO name="Operator" type="SPC_OP" />
     </LNodeType>
 
@@ -112,17 +104,6 @@
         </Private>
       </DA>
       <DA name="q" bType="Quality" fc="ST" qchg="true" />
-      <DA name="ctlModel" type="CtlModels" bType="Enum" fc="CF" />
-      <DA name="t" bType="Timestamp" fc="ST" />
-    </DOType>
-    <DOType id="SPC_SEC" cdc="SPC">
-      <DA name="stVal" fc="ST" dchg="true" bType="BOOLEAN">
-       <Private name="stVal">
-            <Property Name="sMonitoringVar" Value="SecST"/>
-        </Private>
-      </DA>
-      <DA name="q" bType="Quality" fc="ST" qchg="true" />
-      <DA name="Oper" type="SPCOperate" bType="Struct" fc="CO" />
       <DA name="ctlModel" type="CtlModels" bType="Enum" fc="CF" />
       <DA name="t" bType="Timestamp" fc="ST" />
     </DOType>

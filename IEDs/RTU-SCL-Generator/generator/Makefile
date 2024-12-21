@@ -14,6 +14,8 @@ CP = cp
 
 CC = g++
 
+all:	libs modelGeneratorCB modelGeneratorPM
+
 libs:	$(LIB_PUG_NAME)
 
 modelGeneratorCB: $(LIB_PUG_NAME)
