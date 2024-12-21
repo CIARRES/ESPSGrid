@@ -131,7 +131,6 @@ int main(int argc, char* argv[]) {
     update_ied_ip(doc, ip, gateway);
 
     update_sMonitoringVar(doc, ied_name, "SPC_ST");
-    update_sMonitoringVar(doc, ied_name, "SPC_SEC");
     update_sControlVar(doc, ied_name, "SPC_OP");
 
     save_changes(output, doc);
