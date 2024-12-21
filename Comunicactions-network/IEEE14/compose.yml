@@ -15,7 +15,7 @@ services:
         ipv4_address: 10.0.0.4
 
   powermeter1:
-    image: powermeter:latest
+    image: javiersande/sg-powermeter:latest
     environment:
       - PM_ID=1
       - PM_IP=10.0.1.1
@@ -28,7 +28,7 @@ services:
         ipv4_address: 10.0.1.1
 
   circuitbreaker1:
-    image: circuitbreaker:latest
+    image: javiersande/sg-circuitbreaker:latest
     environment:
       - CB_ID=1
       - CB_IP=10.0.1.2
@@ -41,7 +41,7 @@ services:
         ipv4_address: 10.0.1.2
 
   powermeter2:
-    image: powermeter:latest
+    image: javiersande/sg-powermeter:latest
     environment:
       - PM_ID=2
       - PM_IP=10.0.2.1
@@ -54,7 +54,7 @@ services:
         ipv4_address: 10.0.2.1
 
   circuitbreaker2:
-    image: circuitbreaker:latest
+    image: javiersande/sg-circuitbreaker:latest
     environment:
       - CB_ID=2
       - CB_IP=10.0.2.2
@@ -67,7 +67,7 @@ services:
         ipv4_address: 10.0.2.2
 
   powermeter3:
-    image: powermeter:latest
+    image: javiersande/sg-powermeter:latest
     environment:
       - PM_ID=3
       - PM_IP=10.0.3.1
@@ -80,7 +80,7 @@ services:
         ipv4_address: 10.0.3.1
 
   circuitbreaker3:
-    image: circuitbreaker:latest
+    image: javiersande/sg-circuitbreaker:latest
     environment:
       - CB_ID=3
       - CB_IP=10.0.3.2
@@ -93,7 +93,7 @@ services:
         ipv4_address: 10.0.3.2
 
   powermeter4:
-    image: powermeter:latest
+    image: javiersande/sg-powermeter:latest
     environment:
       - PM_ID=4
       - PM_IP=10.0.4.1
@@ -106,7 +106,7 @@ services:
         ipv4_address: 10.0.4.1
 
   circuitbreaker4:
-    image: circuitbreaker:latest
+    image: javiersande/sg-circuitbreaker:latest
     environment:
       - CB_ID=4
       - CB_IP=10.0.4.2
