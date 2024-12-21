@@ -16,7 +16,7 @@ This section outlines the various layers and devices that constitute the Co-Simu
 The network chosen for our simulation is the IEEE-14 test grid, a standard test case in power systems research and education featuring 14 nodes connected by 20 branches.
 
 <p align="center">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/Grid.png" width="600">
+  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/Grid.png" width="600">
 </p>
 
 #### Power Meter and Circuit Breaker
@@ -26,8 +26,8 @@ Given the challenges and limitations of integrating new functionalities and comm
 As shown, we maintain the physical inputs and outputs corresponding to the current lines, numbered 1 to 6 and identified by the letters ABC. Our addition includes the integration of UDP ports that are used to enable the transmission of measured data from the power meter to the externally executed C++ program that emulates the IED.
 
 <div style="display: flex; justify-content: center; align-items: center;">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/PM.png" height="200">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/CB.png" height="200">
+  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/PM.png" height="200">
+  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/CB.png" height="200">
 </div>
 
 
@@ -42,7 +42,7 @@ In our case, we have followed these rules to establish the UDP ports for each IE
 In the realm of communication protocols, various layers are defined. Starting from the bottom, the first two layers implement protocols GOOSE and MMS, integral to the IEC 61850 standard. This standard specifically addresses communication within substation systems, focusing on IEDs. At the topmost level, the Modbus protocol supports data exchange between the RTU and the SCADA system. The RTU sends collected data from IEDs to the SCADA system for visualization by operators.
 
 <p align="center">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/Communications.png" width="400">
+  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/Communications.png" width="400">
 </p>
 
 #### Power Meter and Circuit Breaker
@@ -56,7 +56,7 @@ Given that for a realistic simulation, each IED needs to function as an independ
 In our model, the RTU serves as the intermediary between the IEDs and the SCADA system, responsible for collecting data from each IED and transmitting it to SCADA. It also receives commands from SCADA operators and forwards them to the IEDs operating as circuit breakers. To achieve this, we used the [OpenPLC61850](https://github.com/smartgridadsc/OpenPLC61850) tool, developed from Thiago Alves’s [OpenPLC project](https://github.com/thiagoralves/OpenPLC_v3).
 
 <p align="center">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/OpenPLC.png" width="600">
+  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/OpenPLC.png" width="600">
 </p>
 
 #### SCADA - SCADA BR
@@ -64,7 +64,7 @@ In our model, the RTU serves as the intermediary between the IEDs and the SCADA 
 The SCADA system is the top layer of our framework, providing visual monitoring of the grid for the operator and enabling operations through commands, such as open and close orders for the circuit breakers. To implement this, we use a [containerized version](https://github.com/CIARRES/ScadaBR-Container) of the original [SCADA BR](https://github.com/ScadaBR) project.
 
 <p align="center">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/SCADA.png" width="600">
+  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/SCADA.png" width="600">
 </p>
 
 ## Launch the Default Model
@@ -122,7 +122,7 @@ This section provides a step-by-step guide to install and launch the default exa
    Once the program is running, you can monitor the IEDs on the **Monitoring** page, accessible via the left-hand menu bar.
 
     <p align="center">
-    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/RTU_setup.png" width="400">
+    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/RTU_setup.png" width="400">
     </p>
 
 5. **Configure SCADA System**
@@ -135,13 +135,13 @@ This section provides a step-by-step guide to install and launch the default exa
    * Log out and log back in to the SCADA web server.
 
     <p align="center">
-    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/SCADA_setup.png" width="400">
+    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/SCADA_setup.png" width="400">
     </p>
 
    You can now monitor the grid through the **Graphical View** interface.
 
     <p align="center">
-    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/SCADA_View.png" width="400">
+    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/SCADA_View.png" width="400">
     </p>
 
 6. **Start Physical Layer Simulation**
@@ -153,7 +153,7 @@ This section provides a step-by-step guide to install and launch the default exa
    Finally, open and run the Simulink [model](https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/Physical-Model/IEEE14/Ieee14.slx).
 
     <p align="center">
-    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/Simulink.png" width="400">
+    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/Simulink.png" width="400">
     </p>
 
 ### Example setup
@@ -161,7 +161,7 @@ This section provides a step-by-step guide to install and launch the default exa
 In our experiments, simulations were executed using a Window 10 computer running Simulink. The execution of containers, running different IEDs, RTU and Scada, was performed in a Raspberry Pi connected to the computer via a switch.
 
 <p align="center">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/docs/images/HW.png" width="400">
+  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/HW.png" width="400">
 </p>
 
 
