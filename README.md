@@ -88,14 +88,16 @@ This section provides a step-by-step guide to install and launch the default exa
    git submodule update --init
    ```
 
-2. **Build the IEDs Images**
+2. **Pull Docker Images**
 
-   Before running the IEDs, you need to build the Docker images:
+   Before running the IEDs, RTU and SCADA, you need to pull the Docker images:
 
    ```bash
    cd IEDs/Emulator-images/
-   docker build -f ./circuitBreaker/Dockerfile -t circuitbreaker:latest .
-   docker build -f ./powerMeter/Dockerfile -t powermeter:latest .
+   docker pull javiersande/sg-powermeter:latest
+   docker pull javiersande/sg-circuitbreaker:latest
+   docker pull javiersande/sg-rtu:latest
+   docker pull javiersande/sg-scada:latest
    ```
 
 3. **Set Up the Communication Infrastructure**
