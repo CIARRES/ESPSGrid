@@ -169,7 +169,7 @@ In our experiments, simulations were executed using a Window 10 computer running
 
 ## Using Your Own Model
 
-This framework supports co-simulations with other physical models. To use your own model, you will need to make adjustments across the various layers.
+This framework supports simulation of other physical models. To use your own model, you will need to make adjustments across the various layers. Detailed documentation is available [here](https://github.com/CIARRES/ESPSGrid/tree/main/documentation).
 
 ### Physical model
 
