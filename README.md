@@ -1,6 +1,6 @@
-# Smart Grid Co-Simulation Framework
+# ESPSGrid: Emulation-Simulation for Power Smart
 
-This framework provides a environment to simulate both the standard operation of a smart grid and various types of cyber-attacks targeting cyber-layer devices and protocols. It enables the observation of their physical consequences, offering valuable insights into grid resilience and vulnerabilities.
+ESPSGrid framework provides a environment to simulate both the standard operation of a smart grid and various types of cyber-attacks targeting cyber-layer devices and protocols. It enables the observation of their physical consequences, offering valuable insights into grid resilience and vulnerabilities.
 
 1. [Implementation Details](#implementation-details)
 2. [Launch the Default Model](#launch-the-default-model)
@@ -9,7 +9,7 @@ This framework provides a environment to simulate both the standard operation of
 
 ## Implementation Details
 
-This section outlines the various layers and devices that constitute the Co-Simulation Framework.
+This section outlines the various layers and devices that constitute the ESPSGrid Framework.
 
 ### Physical layer - Simulink
 
