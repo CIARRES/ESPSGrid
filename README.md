@@ -102,10 +102,10 @@ This section provides a step-by-step guide to install and launch the default exa
 
 3. **Set Up the Communication Infrastructure**
 
-   The next step is to set up the communication infrastructure, which includes SCADA, RTU, and IEDs (power meters and circuit breakers). To simplify this process, we provide a [Docker Compose file](https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/Comunicactions-network/IEEE14/compose.yml).
+   The next step is to set up the communication infrastructure, which includes SCADA, RTU, and IEDs (power meters and circuit breakers). To simplify this process, we provide a [Docker Compose file](https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/Communicactions-network/IEEE14/compose.yml).
 
    ```bash
-   cd Comunicactions-network/IEEE14
+   cd Communicactions-network/IEEE14
    docker compose up
    ```
 
