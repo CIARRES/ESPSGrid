@@ -16,7 +16,7 @@ This section outlines the various layers and devices that constitute the ESPSGri
 The network chosen for our simulation is the IEEE-14 test grid, a standard test case in power systems research and education featuring 14 nodes connected by 20 branches.
 
 <p align="center">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/Grid.png" width="600">
+  <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/Grid.png" width="600">
 </p>
 
 #### Power Meter and Circuit Breaker
@@ -26,8 +26,8 @@ Given the challenges and limitations of integrating new functionalities and comm
 As shown, we maintain the physical inputs and outputs corresponding to the current lines, numbered 1 to 6 and identified by the letters ABC. Our addition includes the integration of UDP ports that are used to enable the transmission of measured data from the power meter to the externally executed C++ program that emulates the IED.
 
 <div style="display: flex; justify-content: center; align-items: center;">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/PM.png" height="200">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/CB.png" height="200">
+  <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/PM.png" height="200">
+  <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/CB.png" height="200">
 </div>
 
 
@@ -42,7 +42,7 @@ In our case, we have followed these rules to establish the UDP ports for each IE
 In the realm of communication protocols, various layers are defined. Starting from the bottom, the first two layers implement protocols GOOSE and MMS, integral to the IEC 61850 standard. This standard specifically addresses communication within substation systems, focusing on IEDs. At the topmost level, the Modbus protocol supports data exchange between the RTU and the SCADA system. The RTU sends collected data from IEDs to the SCADA system for visualization by operators.
 
 <p align="center">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/Communications.png" width="400">
+  <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/Communications.png" width="400">
 </p>
 
 #### Power Meter and Circuit Breaker
@@ -56,7 +56,7 @@ Given that for a realistic simulation, each IED needs to function as an independ
 In our model, the RTU serves as the intermediary between the IEDs and the SCADA system, responsible for collecting data from each IED and transmitting it to SCADA. It also receives commands from SCADA operators and forwards them to the IEDs operating as circuit breakers. To achieve this, we used the [OpenPLC61850](https://github.com/smartgridadsc/OpenPLC61850) tool, developed from Thiago Alves’s [OpenPLC project](https://github.com/thiagoralves/OpenPLC_v3).
 
 <p align="center">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/OpenPLC.png" width="600">
+  <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/OpenPLC.png" width="600">
 </p>
 
 #### SCADA - SCADA BR
@@ -64,7 +64,7 @@ In our model, the RTU serves as the intermediary between the IEDs and the SCADA 
 The SCADA system is the top layer of our framework, providing visual monitoring of the grid for the operator and enabling operations through commands, such as open and close orders for the circuit breakers. To implement this, we use a [containerized version](https://github.com/CIARRES/ScadaBR-Container) of the original [SCADA BR](https://github.com/ScadaBR) project.
 
 <p align="center">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/SCADA.png" width="600">
+  <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/SCADA.png" width="600">
 </p>
 
 ## Launch the Default Model
@@ -83,8 +83,8 @@ This section provides a step-by-step guide to install and launch the default exa
    Begin by cloning the repository and its submodules:
 
    ```bash
-   git clone https://github.com/CIARRES/SG-Co-Simulation-Framework.git
-   cd SG-Co-Simulation-Framework
+   git clone https://github.com/CIARRES/ESPSGrid.git
+   cd ESPSGrid
    git submodule update --init
    ```
 
@@ -102,7 +102,7 @@ This section provides a step-by-step guide to install and launch the default exa
 
 3. **Set Up the Communication Infrastructure**
 
-   The next step is to set up the communication infrastructure, which includes SCADA, RTU, and IEDs (power meters and circuit breakers). To simplify this process, we provide a [Docker Compose file](https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/Communicactions-network/IEEE14/compose.yml).
+   The next step is to set up the communication infrastructure, which includes SCADA, RTU, and IEDs (power meters and circuit breakers). To simplify this process, we provide a [Docker Compose file](https://github.com/CIARRES/ESPSGrid/blob/main/Communicactions-network/IEEE14/compose.yml).
 
    ```bash
    cd Communicactions-network/IEEE14
@@ -124,38 +124,38 @@ This section provides a step-by-step guide to install and launch the default exa
    Once the program is running, you can monitor the IEDs on the **Monitoring** page, accessible via the left-hand menu bar.
 
     <p align="center">
-    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/RTU_setup.png" width="400">
+    <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/RTU_setup.png" width="400">
     </p>
 
 5. **Configure SCADA System**
 
-   Once the RTU is running, you can connect the SCADA system. To simplify this process, a [configuration file](https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/Scada/scadabr.json) is provided to automatically set up the data point connections with the RTU.
+   Once the RTU is running, you can connect the SCADA system. To simplify this process, a [configuration file](https://github.com/CIARRES/ESPSGrid/blob/main/Scada/scadabr.json) is provided to automatically set up the data point connections with the RTU.
 
    * Log in to the SCADA web portal at `http://10.0.0.4:8080/ScadaBR` using the default credentials: `admin:admin`.
    * Navigate to the project import page.
-   * Copy the contents of the [configuration file](https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/Scada/scadabr.json) into the import field and click the **Import** button.
+   * Copy the contents of the [configuration file](https://github.com/CIARRES/ESPSGrid/blob/main/Scada/scadabr.json) into the import field and click the **Import** button.
    * Log out and log back in to the SCADA web server.
 
     <p align="center">
-    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/SCADA_setup.png" width="400">
+    <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/SCADA_setup.png" width="400">
     </p>
 
    You can now monitor the grid through the **Graphical View** interface.
 
     <p align="center">
-    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/SCADA_View.png" width="400">
+    <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/SCADA_View.png" width="400">
     </p>
 
 6. **Start Physical Layer Simulation**
 
-   Open the IEEE14 [project](https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/Physical-Model/IEEE14/) in your local MATLAB installation.
+   Open the IEEE14 [project](https://github.com/CIARRES/ESPSGrid/blob/main/Physical-Model/IEEE14/) in your local MATLAB installation.
 
-   Before launching the model, execute the [slblocks.m](https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/Physical-Model/IEEE14/slblocks.m) file to load the [custom blocks](https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/Physical-Model/IEEE14/source_mod.slx) required by the model.
+   Before launching the model, execute the [slblocks.m](https://github.com/CIARRES/ESPSGrid/blob/main/Physical-Model/IEEE14/slblocks.m) file to load the [custom blocks](https://github.com/CIARRES/ESPSGrid/blob/main/Physical-Model/IEEE14/source_mod.slx) required by the model.
 
-   Finally, open and run the Simulink [model](https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/Physical-Model/IEEE14/Ieee14.slx).
+   Finally, open and run the Simulink [model](https://github.com/CIARRES/ESPSGrid/blob/main/Physical-Model/IEEE14/Ieee14.slx).
 
     <p align="center">
-    <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/Simulink.png" width="400">
+    <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/Simulink.png" width="400">
     </p>
 
 ### Example setup
@@ -163,7 +163,7 @@ This section provides a step-by-step guide to install and launch the default exa
 In our experiments, simulations were executed using a Window 10 computer running Simulink. The execution of containers, running different IEDs, RTU and Scada, was performed in a Raspberry Pi connected to the computer via a switch.
 
 <p align="center">
-  <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/HW.png" width="400">
+  <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/HW.png" width="400">
 </p>
 
 
@@ -173,7 +173,7 @@ This framework supports simulation of other physical models. To use your own mod
 
 ### Physical model
 
-This framework enables co-simulations with other physical models in MATLAB/Simulink. To achieve this, you need to replace the meters and circuit breakers in the target model with the subsystems available in [IEDs/Simulink](https://github.com/CIARRES/SG-Co-Simulation-Framework/tree/main/IEDs/Simulink).
+This framework enables co-simulations with other physical models in MATLAB/Simulink. To achieve this, you need to replace the meters and circuit breakers in the target model with the subsystems available in [IEDs/Simulink](https://github.com/CIARRES/ESPSGrid/tree/main/IEDs/Simulink).
 
 Once all the power meters and circuit breakers are in place, you must configure the UDP ports used to send and receive data to and from the external program responsible for emulating the logical and communication aspects of the corresponding IED.
 
@@ -181,7 +181,7 @@ Once all the power meters and circuit breakers are in place, you must configure 
 
 To connect your IEDs to the RTU, you need to modify the ST program loaded into the OpenPLC, as well as the SCL files that contain the information required to establish the connection between the RTU and the IEDs through MMS (IEC 61850).
 
-You can use the [ST program](https://github.com/CIARRES/SG-Co-Simulation-Framework/tree/main/RTU/OpenPLC%20Program) and [SCL files](https://github.com/CIARRES/SG-Co-Simulation-Framework/tree/main/IEDs/OpenPLC-ICL-files) from our example as a reference. Additionally, we provide a [SCL file generator](https://github.com/CIARRES/SG-Co-Simulation-Framework/tree/main/IEDs/OpenPLC-ICL-files/generator) to generate SCL client files for new IEDs by simply providing the ID, IP address, and IP gateway of your new IED.
+You can use the [ST program](https://github.com/CIARRES/ESPSGrid/tree/main/RTU/OpenPLC%20Program) and [SCL files](https://github.com/CIARRES/ESPSGrid/tree/main/IEDs/OpenPLC-ICL-files) from our example as a reference. Additionally, we provide a [SCL file generator](https://github.com/CIARRES/ESPSGrid/tree/main/IEDs/OpenPLC-ICL-files/generator) to generate SCL client files for new IEDs by simply providing the ID, IP address, and IP gateway of your new IED.
 
 We also recommend following the instructions in the [OpenPLC61850](https://github.com/smartgridadsc/OpenPLC61850) repository for further guidance.
 
