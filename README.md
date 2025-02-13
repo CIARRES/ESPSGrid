@@ -93,7 +93,6 @@ This section provides a step-by-step guide to install and launch the default exa
    Before running the IEDs, RTU and SCADA, you need to pull the Docker images:
 
    ```bash
-   cd IEDs/Emulator-images/
    docker pull javiersande/sg-powermeter:latest
    docker pull javiersande/sg-circuitbreaker:latest
    docker pull javiersande/sg-rtu:latest
