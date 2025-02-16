@@ -14,8 +14,8 @@
                "nameOverride":"",
                "oneImageIndex":4,
                "settableOverride":false,
-               "x":660,
-               "y":509,
+               "x":774,
+               "y":508,
                "zeroImageIndex":7
             },
             {
@@ -28,8 +28,8 @@
                "nameOverride":"",
                "oneImageIndex":4,
                "settableOverride":false,
-               "x":655,
-               "y":252,
+               "x":527,
+               "y":254,
                "zeroImageIndex":7
             },
             {
@@ -42,8 +42,8 @@
                "nameOverride":"",
                "oneImageIndex":4,
                "settableOverride":false,
-               "x":475,
-               "y":307,
+               "x":494,
+               "y":404,
                "zeroImageIndex":7
             },
             {
@@ -128,8 +128,8 @@
                "nameOverride":"",
                "oneImageIndex":4,
                "settableOverride":false,
-               "x":654,
-               "y":387,
+               "x":658,
+               "y":385,
                "zeroImageIndex":7
             },
             {
@@ -2077,6 +2077,8 @@
    "maintenanceEvents":[
    ],
    "scripts":[
+   ],
+   "pointValues":[
    ],
    "systemSettings":[
       {
