@@ -19,7 +19,7 @@ The network chosen for our simulation is the IEEE-14 test grid, a standard test 
   <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/Grid.png" width="600">
 </p>
 
-#### Power Meter and Circuit Breaker
+#### Smart Power Meter and Circuit Breaker
 
 Given the challenges and limitations of integrating new functionalities and communication protocols directly into Simulink, our approach divides the emulation of IEDs into two essential components. The physical component, responsible for tasks such as reading line values (in the case of a power meter) or controlling the electricity flow (as with a circuit breaker), is implemented as a [MATLAB/Simulink subsystem](https://es.mathworks.com/help/simulink/subsystems.html).
 
@@ -33,7 +33,7 @@ As shown, we maintain the physical inputs and outputs corresponding to the curre
 
 In our case, we have followed these rules to establish the UDP ports for each IED:
 
-* For the power meter, we have a UDP module sending measurements on port 1XXXX, where XXXX corresponds to the device ID. For example, power meter 1 will be sending to port 10001.
+* For the smart power meter, we have a UDP module sending measurements on port 1XXXX, where XXXX corresponds to the device ID. For example, power meter 1 will be sending to port 10001.
 
 * For the circuit breaker, there is a UDP listener on port 2XXXX, where XXXX corresponds to the device ID. For example, CB 1 will be listening on port 20001.
 
@@ -45,7 +45,7 @@ In the realm of communication protocols, various layers are defined. Starting fr
   <img src="https://github.com/CIARRES/ESPSGrid/blob/main/documentation/images/Communications.png" width="400">
 </p>
 
-#### Power Meter and Circuit Breaker
+#### Smart Power Meter and Circuit Breaker
 
 For each IED, the logical component, managing communication and logical tasks, is developed in a C++ program. Despite the separate implementation of the physical layer (simulated using Simulink) within our framework, both components conceptually represent features of the same physical device.
 
