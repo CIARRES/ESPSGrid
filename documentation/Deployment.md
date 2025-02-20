@@ -1,4 +1,4 @@
-# IEDs and Network Configuration
+# Deployment
 
 The deployment of the local network, IEDs, and control systems is managed through Docker Compose. To achieve this, we create a YAML file where we define the devices to be deployed, along with their parameters and IP addresses.
 
