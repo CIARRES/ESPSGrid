@@ -5,6 +5,5 @@ In our experiments, the physical layer simulation was conducted on a Windows 10 
 <p align="center">
   <img src="https://github.com/CIARRES/SG-Co-Simulation-Framework/blob/main/documentation/images/HW.png" width="400" alt="Recommended Setup Diagram">
 </p>
-*Figure 1: Recommended Setup for Physical Layer Simulation and IED Emulation*
 
 Alternatively, experiments can also be performed using Ubuntu as the platform for running the Simulink physical layer simulation in conjunction with IED emulation.
