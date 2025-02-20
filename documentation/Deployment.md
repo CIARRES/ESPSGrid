@@ -64,3 +64,12 @@ networks:
         - subnet: 10.0.0.0/16
           gateway: 10.0.0.1
 ```
+
+**Note:** To ensure **smooth deployment and compatibility** of the Docker network when running on the same machine as the **Simulink model**, we recommend **creating an IPvlan network** associated with one of the computer's **LAN interfaces**. This setup helps maintain **stable communication** between **Simulink** and the **IED containers**.  
+
+Replace `<iface>` with your actual **physical network interface** (e.g., `wlan0` or `enp3s0`):  
+```sh
+sudo ip link add eth0 link <iface> type ipvlan mode l2
+sudo ip link set eth0 up
+sudo ip addr add 10.0.0.2/16 dev eth0
+```
